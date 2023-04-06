@@ -20,7 +20,7 @@ public class ArticleListServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		response.setContentType("text/html; charset=UTF-8");
 
 		// DB 연결
@@ -47,8 +47,11 @@ public class ArticleListServlet extends HttpServlet {
 			String sql = "SELECT * FROM article;";
 
 			List<Map<String, Object>> articleRows = dbUtil.selectRows(conn, sql);
-			
+
 			response.getWriter().append(articleRows.toString());
+
+			request.setAttribute("articleRows", articleRows);
+			request.getRequestDispatcher("/jsp/article/list.jsp").forward(request, response);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
