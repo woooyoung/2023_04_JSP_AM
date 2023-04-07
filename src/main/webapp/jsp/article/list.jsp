@@ -13,11 +13,7 @@ List<Map<String, Object>> articleRows = (List<Map<String, Object>>) request.getA
 </head>
 <body>
 	<div>
-		<a href="https://www.naver.com" target="_blank">네이버</a>
-		<a href="http://localhost:8081/2023_04_JSP_AM/article/list"
-			target="_blank">버튼1</a>
-		<a href="/2023_04_JSP_AM/article/list" target="_blank">버튼2</a>
-		<a href="detail" target="_blank">디테일</a>
+		<a href="../home/main">메인페이지로 이동</a>
 	</div>
 
 	<h1>게시물 리스트</h1>

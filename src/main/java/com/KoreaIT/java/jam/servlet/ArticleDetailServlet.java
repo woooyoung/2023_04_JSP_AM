@@ -1,10 +1,9 @@
-package com.KoreaIT.java.jam;
+package com.KoreaIT.java.jam.servlet;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -42,13 +41,11 @@ public class ArticleDetailServlet extends HttpServlet {
 
 			response.getWriter().append("Success!!!");
 
-			DBUtil dbUtil = new DBUtil(request, response);
-
 			int id = Integer.parseInt(request.getParameter("id"));
 
 			String sql = String.format("SELECT * FROM article WHERE id = %d;", id);
 
-			Map<String, Object> articleRow = dbUtil.selectRow(conn, sql);
+			Map<String, Object> articleRow = DBUtil.selectRow(conn, sql);
 
 			response.getWriter().append(articleRow.toString());
 
