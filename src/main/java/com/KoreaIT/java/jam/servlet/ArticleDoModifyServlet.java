@@ -39,11 +39,14 @@ public class ArticleDoModifyServlet extends HttpServlet {
 
 		try {
 			conn = DriverManager.getConnection(url, user, password);
+			
+			request.setCharacterEncoding("UTF-8");
 
 			int id = Integer.parseInt(request.getParameter("id"));
 
 			String title = request.getParameter("title");
 			String body = request.getParameter("body");
+
 
 			SecSql sql = SecSql.from("UPDATE article");
 			sql.append("SET title = ?,", title);
