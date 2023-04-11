@@ -61,6 +61,8 @@ public class DBUtil {
 		} catch (SQLException e) {
 			System.out.println("===========QUERY 예외 발생===========\n" + sql);
 			throw new SQLErrorException("SQL 예외, SQL : " + sql, e);
+		} catch (SQLErrorException e) {
+			e.getOrigin().printStackTrace();
 		} finally {
 			if (rs != null) {
 				try {
