@@ -33,7 +33,7 @@ title = '제목 2',
 
 INSERT INTO article
 SET regDate = NOW(),
-title = '제목 3',1
+title = '제목 3',
 `body` = '내용 3';
 
 INSERT INTO article
