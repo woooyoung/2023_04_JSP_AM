@@ -43,7 +43,7 @@ public class ArticleModifyServlet extends HttpServlet {
 
 			SecSql sql = SecSql.from("SELECT *");
 			sql.append("FROM article");
-			sql.append("WHERE i = ? ;", id);
+			sql.append("WHERE id = ? ;", id);
 
 			Map<String, Object> articleRow = DBUtil.selectRow(conn, sql);
 
